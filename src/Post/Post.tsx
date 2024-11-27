@@ -7,7 +7,7 @@ type Props = {
 export const Post = (props: Props) => {
     return (
         <div>
-Post
+Post333
         </div>
     );
 };
