@@ -7,10 +7,13 @@ import {Menu} from "../../components/menu/Menu";
 
 type Props = {};
 export const Header = (props: Props) => {
+    const menu = [
+        "Home", "Skills", "Works", "Testimony", "Contact"
+    ]
     return (
         <StyledHeader>
                 <Logo iconId={"html"}/>
-            <Menu />
+            <Menu items={menu}/>
         </StyledHeader>
     );
 };
