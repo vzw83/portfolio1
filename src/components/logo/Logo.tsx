@@ -1,10 +1,12 @@
 import * as React from "react";
+import {Icon} from "../icon/Icon";
 
-type Props = {};
+type Props = {
+    iconId: string
+};
+
 export const Logo = (props: Props) => {
     return (
-        <a href="">
-            <img src="" alt=""/>
-        </a>
+        <Icon iconId={props.iconId}/>
     );
 };
