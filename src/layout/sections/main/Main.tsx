@@ -21,9 +21,9 @@ export const Main = (props: Props) => {
     );
 };
 
-const StyledMain = styled.div`
+const StyledMain = styled.section`
     min-height: 100vh;
-    background-color: coral;
+    background-color: chocolate;
 `
 const Photo = styled.img`
     width: 350px;
