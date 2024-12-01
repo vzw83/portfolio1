@@ -35,5 +35,5 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     z-index: 99999;
-    opacity: 0.95;
+    opacity: 0.98;
 `
