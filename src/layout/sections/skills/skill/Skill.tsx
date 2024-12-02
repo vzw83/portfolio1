@@ -28,7 +28,7 @@ const StyledSkill = styled.div`
     min-height: 338px;
     padding: 70px 20px 40px;
 `
-const IconWrapper = styled.div`
+export const IconWrapper = styled.div`
     position: relative;
     z-index: 1;
     margin-bottom: 84px;
@@ -52,16 +52,12 @@ const IconWrapper = styled.div`
 `
 const StyledTitle = styled.h3`
     font-family: Josefin Sans, sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: 0.06em;
+    
     text-transform: uppercase;
     margin-bottom: 15px;
     
 `
 const StyledText = styled.p`
-    font-weight: 400;
-    font-size: 14px;
-    margin-bottom: 40px;
     line-height: 1.4;
+    margin-bottom: 40px;
 `

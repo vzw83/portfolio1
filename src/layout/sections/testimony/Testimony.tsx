@@ -1,10 +1,12 @@
 // @flow
 import * as React from 'react';
 import styled from "styled-components";
+import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Icon} from "../../../components/icon/Icon";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {Slider} from "../../../components/slider/Slider";
+import {IconWrapper} from "../skills/skill/Skill";
 // import img from "./../../../assets/images/icons-sprite.svg";
 
 
@@ -12,16 +14,22 @@ type Props = {};
 export const Testimony = (props: Props) => {
     return (
         <StyledTestimony>
-            <SectionTitle>Testimony</SectionTitle>
-            <FlexWrapper direction={"column"} align={"center"}>
-                <Icon iconId={"quote"}/>
-                <Slider/>
-            </FlexWrapper>
+                <SectionTitle>Testimony</SectionTitle>
+                <FlexWrapper direction={"column"} align={"center"}>
+                    <IconWrapper>
+                        <Icon iconId={"quote"}/>
+                    </IconWrapper>
+                    <Slider/>
+                </FlexWrapper>
+
         </StyledTestimony>
     );
 };
 const StyledTestimony = styled.section`
-    background-color: #ce9c60;
+    ${IconWrapper} {
+    margin: 30px 0 72px;
+    }
+
 `
 
 
