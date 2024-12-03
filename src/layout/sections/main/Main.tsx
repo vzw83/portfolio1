@@ -12,7 +12,7 @@ export const Main = (props: Props) => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={"center"} justify={"space-between"} wrap={"wrap"} >
+                <FlexWrapper align={"center"} justify={"space-around"} wrap={"wrap"} >
                     <TextContainer>
                         <SmallText>Hi There</SmallText>
                         <Name>I am <span>Vladimir</span></Name>
@@ -36,7 +36,7 @@ const Photo = styled.img`
     width: 350px;
     height: 430px;
     object-fit: cover;
-   
+   margin-right: 20px;
     @media ${theme.media.mobile} {
         width: 310px;
         height: 380px;
@@ -61,13 +61,17 @@ const PhotoWrapper = styled.div`
         @media ${theme.media.mobile} {
             width: 314px;
             height: 414px;
+            top: -17px;
+            left: 20px;
         }
     }
 `
 const MainTitle = styled.h1`
-    ${font({ weight: 400, Fmax: 27, Fmin: 20})}
-    //font-weight: 400;
-    //font-size: 27px;
+    ${font({weight: 400, Fmax: 27, Fmin: 20})} //font-weight: 400;
+            //font-size: 27px;
+    @media ${theme.media.mobile} {
+    margin-bottom: 65px;
+}
 `
 const Name = styled.h2`
     ${font({family: "Josefin Sans, sans-serif", weight: 700, Fmax: 50, Fmin: 36})}
@@ -92,13 +96,15 @@ const Name = styled.h2`
             z-index: -1;
         }
     }
+    @media ${theme.media.mobile} {
+        margin: 15px 0 22px;        
+    }
 `
 
 const SmallText = styled.span`
-    ${font({ weight: 400, Fmax: 27, Fmin: 20})}
     
-    //font-weight: 400;
-    //font-size: 14px;
+    font-weight: 400;
+    font-size: 14px;
 `
 const TextContainer = styled.div`
     text-align: left;
