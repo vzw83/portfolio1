@@ -1,4 +1,5 @@
 // @flow
+import {useState} from "react";
 import * as React from 'react';
 import styled from "styled-components";
 import {Container} from "../../components/Container";
@@ -6,13 +7,21 @@ import {FlexWrapper} from "../../components/FlexWrapper";
 import {Logo} from "../../components/logo/Logo";
 import {theme} from "../../styles/Theme";
 import {HeaderMenu} from "./headerMenu/HeaderMenu";
+import {MobileMenu} from "./mobileMenu/MobileMenu";
 
 
 type Props = {};
 export const Header = (props: Props) => {
+    const [isOpenMenu, setOpenMenu] = useState(false)
+
     const menu = [
         "Home", "Skills", "Works", "Testimony", "Contact"
     ]
+
+    const handlerButtonMenu = (click: boolean)=>{
+        setOpenMenu(click)
+    }
+
     return (
         <StyledHeader>
             <Container>
@@ -20,6 +29,7 @@ export const Header = (props: Props) => {
                     <Logo iconId={"html"}/>
                     {/* eslint-disable-next-line react/jsx-no-undef */}
                     <HeaderMenu items={menu}/>
+                    <MobileMenu handlerButtonMenu={handlerButtonMenu} isOpenMenu={isOpenMenu} items={menu}/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>

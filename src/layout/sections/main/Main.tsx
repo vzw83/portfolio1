@@ -11,7 +11,7 @@ export const Main = (props: Props) => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={"center"} justify={"space-between"}>
+                <FlexWrapper align={"center"} justify={"space-between"} wrap={"wrap"} >
                     <TextContainer>
                         <SmallText>Hi There</SmallText>
                         <Name>I am <span>Vladimir</span></Name>

@@ -5,6 +5,8 @@ import {theme} from "../../../styles/Theme";
 
 type Props = {
     items: string[]
+    // isOpenMenu: boolean
+    // onClick:()=>void
 };
 export const HeaderMenu = (props: Props) => {
     return (
@@ -33,8 +35,11 @@ const StyleHeaderMenu = styled.nav`
         gap: 30px;
         justify-content: center;
     }
-`
 
+    @media ${theme.media.tablet} {
+        display: none;
+    }
+`
 
 const Link = styled.a`
     font-family: "Josefin Sans", sans-serif;
