@@ -3,6 +3,7 @@ import * as React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
+import {font} from "../../../styles/Common";
 import {theme} from "../../../styles/Theme";
 import photo from "./../../../assets/images/photo_2024-11-29_10-33-09.jpg"
 
@@ -36,6 +37,10 @@ const Photo = styled.img`
     height: 430px;
     object-fit: cover;
    
+    @media ${theme.media.mobile} {
+        width: 310px;
+        height: 380px;
+    }
 `
 const PhotoWrapper = styled.div`
     position: relative;
@@ -52,17 +57,24 @@ const PhotoWrapper = styled.div`
         border: 5px solid ${theme.colors.accent};
         top: -24px;
         left: 24px;
+        
+        @media ${theme.media.mobile} {
+            width: 314px;
+            height: 414px;
+        }
     }
 `
 const MainTitle = styled.h1`
-    font-weight: 400;
-    font-size: 27px;
+    ${font({ weight: 400, Fmax: 27, Fmin: 20})}
+    //font-weight: 400;
+    //font-size: 27px;
 `
 const Name = styled.h2`
+    ${font({family: "Josefin Sans, sans-serif", weight: 700, Fmax: 50, Fmin: 36})}
+    //letter-spacing: 0.05em;
+    //font-size: 50px;
+    //font-weight: 700;
     font-family: Josefin Sans, sans-serif;
-    letter-spacing: 0.05em;
-    font-size: 50px;
-    font-weight: 700;
     margin: 10px 0;
 
     span {
@@ -83,8 +95,10 @@ const Name = styled.h2`
 `
 
 const SmallText = styled.span`
-    font-weight: 400;
-    font-size: 14px;
+    ${font({ weight: 400, Fmax: 27, Fmin: 20})}
+    
+    //font-weight: 400;
+    //font-size: 14px;
 `
 const TextContainer = styled.div`
     text-align: left;
