@@ -3,6 +3,7 @@ import * as React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Icon} from "../../components/icon/Icon";
+import {font} from "../../styles/Common";
 import {theme} from "../../styles/Theme";
 
 type Props = {};
@@ -44,10 +45,12 @@ const StyledFooter = styled.footer`
     background-color: ${theme.colors.primaryBg};
 `
 const Name = styled.span`
+    
+    ${font({family:"'Josefin Sans', sans-serif",weight: 700, Fmax: 22, Fmin: 16})}    
+    //font-family: Josefin Sans, sans-serif;
+    //font-weight: 700;
+    //font-size: 22px;
     margin-top: 40px;
-    font-family: Josefin Sans, sans-serif;
-    font-weight: 700;
-    font-size: 22px;
     letter-spacing: 0.14em;
 `
 const SocialList = styled.ul`

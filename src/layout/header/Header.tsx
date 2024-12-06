@@ -1,49 +1,40 @@
 // @flow
-import {useState} from "react";
-import * as React from 'react';
-import styled from "styled-components";
+import {useEffect, useState} from "react";
+import * as React from "react";
 import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Logo} from "../../components/logo/Logo";
-import {theme} from "../../styles/Theme";
-import {HeaderMenu} from "./headerMenu/HeaderMenu";
-import {MobileMenu} from "./mobileMenu/MobileMenu";
+import {DesktopMenu} from "./headerMenu/desktopMenu/DesktopMenu";
+import {MobileMenu} from "./headerMenu/mobileMenu/MobileMenu";
+import {S} from "./Header_Styles"
 
 
 type Props = {};
-export const Header = (props: Props) => {
-    const [isOpenMenu, setOpenMenu] = useState(false)
 
-    const menu = [
-        "Home", "Skills", "Works", "Testimony", "Contact"
-    ]
+const menu = [
+    "Home", "Skills", "Works", "Testimony", "Contact"
+]
+export const Header: React.FC = (props: Props) => {
+    const [width, setWidth] = useState(window.innerWidth)
 
-    const handlerButtonMenu = (click: boolean)=>{
-        setOpenMenu(click)
-    }
+    const beakepoint = 768
 
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     return (
-        <StyledHeader>
+        <S.Header>
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo iconId={"html"}/>
                     {/* eslint-disable-next-line react/jsx-no-undef */}
-                    <HeaderMenu items={menu}/>
-                    <MobileMenu handlerButtonMenu={handlerButtonMenu} isOpenMenu={isOpenMenu} items={menu}/>
+                    {width > beakepoint ? <DesktopMenu items={menu}/> : <MobileMenu items={menu}/>}
+
                 </FlexWrapper>
             </Container>
-        </StyledHeader>
+        </S.Header>
     );
 };
 
-const StyledHeader = styled.header`
-    background-color: ${theme.colors.secondaryBg};
-   color: ${theme.colors.accent};
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-    opacity: 0.98;
-`

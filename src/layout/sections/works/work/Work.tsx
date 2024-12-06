@@ -9,6 +9,7 @@ type Props = {
     title: string
     text: string
     src: string
+    type: string
 };
 export const Work = (props: Props) => {
     return (
@@ -20,8 +21,8 @@ export const Work = (props: Props) => {
             <Description>
                 <Title>{props.title}</Title>
                 <Text>{props.text}</Text>
-                <Link href={"#"}>demo</Link>
-                <Link href={"#"}>Code</Link>
+                <Link  href={"#"}>demo</Link>
+                <Link  href={"#"}>Code</Link>
             </Description>
 
         </StyledWork>
@@ -29,8 +30,8 @@ export const Work = (props: Props) => {
 };
 const StyledWork = styled.div`
     background-color: ${theme.colors.secondaryBg};
-    max-width: 540px;
-    width: 100%;
+    width: 330px;
+    flex-grow: 1;
 
     ${Link} {
         padding: 10px 0;
@@ -38,6 +39,9 @@ const StyledWork = styled.div`
         & + ${Link} {
             margin-left: 20px;
         }
+    }
+    @media ${theme.media.desktop} {
+        max-width: 540px;        
     }
 `
 const Image = styled.img`
@@ -48,36 +52,59 @@ const Image = styled.img`
 const ImageWrapper = styled.div`
     position: relative;
 
-    &:hover{        
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            backdrop-filter: blur(4px);
-            background: rgba(0, 0, 0, 0.3);
-        }
-        ${Button}{
-            opacity: 1;
-        }
-    }  
-    
-    ${Button}{
+    ${Button} {
         opacity: 0;
         position: absolute;
         left: 50%;
         top: 50%;
-        transform:translate(-50% ,-50%) ;
-        
-        &::before{
+        transform: translate(-50%, -50%);
+
+        &::before {
             width: 100%;
             height: 100%;
             z-index: -1;
         }
     }
-  
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+    }
+
+    &:hover {
+        &::before {
+            //content: "";
+            //position: absolute;
+            //left: 0;
+            //right: 0;
+            //top: 0;
+            //bottom: 0;
+            //backdrop-filter: blur(4px);
+            //background: rgba(0, 0, 0, 0.3);
+            opacity: 1;
+        }
+
+        ${Button} {
+            opacity: 1;
+        }
+    }
+
+    @media ${theme.media.tablet} {
+        &::before {
+            opacity: 1;
+        }
+
+        ${Button} {
+            opacity: 1;
+        }
+    }
 `
 const Description = styled.div`
     padding: 25px 20px;

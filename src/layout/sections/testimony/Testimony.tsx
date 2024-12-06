@@ -14,6 +14,7 @@ type Props = {};
 export const Testimony = (props: Props) => {
     return (
         <StyledTestimony>
+            <Container>
                 <SectionTitle>Testimony</SectionTitle>
                 <FlexWrapper direction={"column"} align={"center"}>
                     <IconWrapper>
@@ -21,7 +22,7 @@ export const Testimony = (props: Props) => {
                     </IconWrapper>
                     <Slider/>
                 </FlexWrapper>
-
+            </Container>
         </StyledTestimony>
     );
 };
