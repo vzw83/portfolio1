@@ -9,7 +9,7 @@ import {SectionTitle} from "../../../components/SectionTitle";
 type Props = {};
 export const Slogan = (props: Props) => {
     return (
-        <StyledSlogan>
+        <StyledSlogan >
             <Container>
                 <FlexWrapper direction={"column"} align={"center"}>
                     <SectionTitle>I Am Available For Freelance</SectionTitle>

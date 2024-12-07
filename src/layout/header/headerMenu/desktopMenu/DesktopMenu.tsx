@@ -5,14 +5,12 @@ import {Menu} from "../menu/Menu";
 
 
 type Props = {
-    items: string[]
-    // isOpenMenu: boolean
-    // onClick:()=>void
+
 };
 export const DesktopMenu: React.FC<Props> = (props: Props) => {
     return (
         <S.DesktopMenu>
-            <Menu items={props.items}/>
+            <Menu />
         </S.DesktopMenu>
     );
 };

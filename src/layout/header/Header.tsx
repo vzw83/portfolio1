@@ -11,9 +11,7 @@ import {S} from "./Header_Styles"
 
 type Props = {};
 
-const menu = [
-    "Home", "Skills", "Works", "Testimony", "Contact"
-]
+
 export const Header: React.FC = (props: Props) => {
     const [width, setWidth] = useState(window.innerWidth)
 
@@ -25,12 +23,12 @@ export const Header: React.FC = (props: Props) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
     return (
-        <S.Header>
+        <S.Header id={"home"}>
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo iconId={"html"}/>
                     {/* eslint-disable-next-line react/jsx-no-undef */}
-                    {width > beakepoint ? <DesktopMenu items={menu}/> : <MobileMenu items={menu}/>}
+                    {width > beakepoint ? <DesktopMenu /> : <MobileMenu />}
 
                 </FlexWrapper>
             </Container>

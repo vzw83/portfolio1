@@ -6,10 +6,10 @@ import {Menu} from "../menu/Menu";
 
 
 type Props = {
-    items: string[]
+
 };
 
-export const MobileMenu: React.FC<Props> = (props: Props) => {
+export const MobileMenu: React.FC = (props: Props) => {
 
     const [isOpenMenu, setOpenMenu] = useState(false)
 
@@ -24,7 +24,7 @@ const onClickHandler = ( )=>{
                 <span></span>
             </S.BurgerButton>
             <S.MobileMenuWrapper isOpen = {isOpenMenu}>
-               <Menu items={props.items}/>
+               <Menu />
             </S.MobileMenuWrapper>
         </S.MobilePopup>
     );

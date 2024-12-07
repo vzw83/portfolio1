@@ -1,6 +1,11 @@
+import {Link} from "react-scroll";
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
 
+
+const ListItem = styled.li`
+    position: relative;    
+`
 const Mask = styled.span`
     position: absolute;
     top: 0;
@@ -18,44 +23,47 @@ const Mask = styled.span`
             transform: translateY(-50%);
         }
     }
+    
 `
-const ListItem = styled.li`
-    position: relative;
-    &::before{
-        content: "";
-        display: inline-block;
-        height: 3px;
-        background-color: ${theme.colors.accent};
-        
-        position: absolute;
-        top: 50%;
-        left: -10px;
-        right: -10px;
-        z-index: 1;
-        
-        transform: scale(0);
-    }
-    &:hover{
-        &::before{
-            transform: scale(1);
-        }
-        ${Mask}{
-           transform: skewX(12deg) translateX(5px);
-            color: ${theme.colors.font};
-        }
-        & + ${Mask}{
-            transform: skewX(-12deg) translateX(-8px);
-        }
-        
-    }    
-`
-const Link = styled.a`
+
+
+
+const NavLink = styled(Link)`
     font-family: "Josefin Sans", sans-serif;
     font-weight: 400;
     font-size: 30px;
     text-align: center;
     color: transparent;
+    
+    &::before{
+        content: "";
+        display: inline-block;
+        height: 3px;
+        background-color: ${theme.colors.accent};
+
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        right: -10px;
+        z-index: 1;
+
+        transform: scale(0);
+    }
+    &:hover, &.active{
+        &::before{
+            transform: scale(1);
+        }
+        ${Mask}{
+            transform: skewX(12deg) translateX(5px);
+            color: ${theme.colors.font};
+        }
+        & + ${Mask}{
+            transform: skewX(-12deg) translateX(-8px);
+        }
+
+    }
 `
+
 const MobilePopup = styled.nav`
     // display: none;
     //
@@ -63,6 +71,7 @@ const MobilePopup = styled.nav`
     //     display: block;
     // }
 `
+
 const MobileMenuWrapper = styled.div<{ isOpen: boolean }>`
     position: fixed;
     top: 0;
@@ -87,6 +96,7 @@ const MobileMenuWrapper = styled.div<{ isOpen: boolean }>`
         flex-direction: column;
     }
 `
+
 const BurgerButton = styled.button<{ isOpen: boolean }>`
     position: fixed;
     top: -100px;
@@ -137,6 +147,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
         }
     }
 `
+
 const DesktopMenu = styled.nav`
     ul {
         display: flex;
@@ -152,7 +163,7 @@ const DesktopMenu = styled.nav`
 export const S = {
     Mask,
     ListItem,
-    Link,
+    NavLink,
     MobilePopup,
     MobileMenuWrapper,
     BurgerButton,

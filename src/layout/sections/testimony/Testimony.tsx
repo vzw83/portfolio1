@@ -6,20 +6,19 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Icon} from "../../../components/icon/Icon";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {Slider} from "../../../components/slider/Slider";
-import {IconWrapper} from "../skills/skill/Skill";
-// import img from "./../../../assets/images/icons-sprite.svg";
+import {S} from "../skills/Skill_Styles";
 
 
 type Props = {};
-export const Testimony = (props: Props) => {
+export const Testimony: React.FC = (props: Props) => {
     return (
-        <StyledTestimony>
+        <StyledTestimony id={"testimony"}>
             <Container>
                 <SectionTitle>Testimony</SectionTitle>
                 <FlexWrapper direction={"column"} align={"center"}>
-                    <IconWrapper>
+                    <S.IconWrapper>
                         <Icon iconId={"quote"}/>
-                    </IconWrapper>
+                    </S.IconWrapper>
                     <Slider/>
                 </FlexWrapper>
             </Container>
@@ -27,10 +26,9 @@ export const Testimony = (props: Props) => {
     );
 };
 const StyledTestimony = styled.section`
-    ${IconWrapper} {
+    ${S.IconWrapper} {
     margin: 30px 0 72px;
     }
-
 `
 
 

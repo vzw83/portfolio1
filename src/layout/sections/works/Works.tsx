@@ -1,7 +1,6 @@
 // @flow 
 import {useState} from "react";
 import * as React from 'react';
-import styled from "styled-components";
 import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {TabMenu} from "./tabMenu/tabMenu";
@@ -9,6 +8,7 @@ import {SectionTitle} from "../../../components/SectionTitle";
 import {Work} from "./work/Work";
 import imgSocial from "./../../../assets/images/socialNetwork.png"
 import imgClock from "./../../../assets/images/clock.png"
+import {S} from "./Works_Styles";
 
 type Props = {};
 const tabsItems: Array<{ title: string; status: "all" | "landing" | "react" | "spa"; }> = [
@@ -34,7 +34,7 @@ const workData = [
         type: "react"
     }
 ]
-export const Works = (props: Props) => {
+export const Works: React.FC = (props: Props) => {
     const [filterStatus, setFilterStatus] = useState("all")
     let filteredWorks = workData
     if (filterStatus === "landing") {
@@ -52,7 +52,7 @@ export const Works = (props: Props) => {
     }
 
     return (
-        <StyledWorks>
+        <S.Works id={"works"}>
             <Container>
                 <SectionTitle>My Works</SectionTitle>
                 <TabMenu filterStatus={filterStatus} filteredHandler={filteredHandler} tabsItems={tabsItems}/>
@@ -69,12 +69,6 @@ export const Works = (props: Props) => {
                 </FlexWrapper>
             </Container>
 
-        </StyledWorks>
+        </S.Works>
     );
 };
-const StyledWorks = styled.section`
-    ${FlexWrapper} {
-        gap: 30px;
-    }
-
-`
