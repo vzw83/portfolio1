@@ -20,7 +20,7 @@ const onClickHandler = ( )=>{
 
     return (
         <S.MobilePopup>
-            <S.BurgerButton onBlur={()=>setOpenMenu(false)} onClick={onClickHandler}  isOpen = {isOpenMenu}>
+            <S.BurgerButton  onClick={onClickHandler}  isOpen = {isOpenMenu}>
                 <span></span>
             </S.BurgerButton>
             <S.MobileMenuWrapper isOpen = {isOpenMenu}>

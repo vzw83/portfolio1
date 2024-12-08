@@ -1,12 +1,12 @@
 // @flow
 import * as React from 'react';
+import {Element} from "react-scroll";
 import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {S} from "./Main_Styles";
 import photo from "./../../../assets/images/photo_2024-11-29_10-33-09.jpg"
 
-type Props = {};
-export const Main: React.FC = (props: Props) => {
+export const Main: React.FC = () => {
     return (
         <S.Main id={"home"}>
             <Container>

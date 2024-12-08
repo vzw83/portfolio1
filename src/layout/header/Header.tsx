@@ -23,7 +23,7 @@ export const Header: React.FC = (props: Props) => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
     return (
-        <S.Header id={"home"}>
+        <S.Header>
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo iconId={"html"}/>
